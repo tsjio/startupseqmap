@@ -1,4 +1,4 @@
-startupbnemap
-=============
+Startup South East Queensland Map
+=================================
 
-An interactive, transit-style map for the greater Brisbane (i.e., south-east Qld) startup ecosystem.
+An interactive, transit-style map for the south-east Qld startup ecosystem.
