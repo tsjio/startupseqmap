@@ -127,13 +127,18 @@ footer {
 	background: #FFFFFF;
 }
 
+#logo {
+	height: 10px;
+	width: auto;
+}
+
 footer #legend-toggle {
 	cursor: pointer;
 }
 
 footer p {
 	margin: 0;
-	line-height: 20px;
+	line-height: 30px;
 }
 
 footer a {
