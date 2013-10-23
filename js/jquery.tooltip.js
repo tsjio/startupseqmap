@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	// Tooltip only Text
 	$('[rel="tooltip"]').hover(function() {
 		// Hover over
 		var title = $(this).attr('title');

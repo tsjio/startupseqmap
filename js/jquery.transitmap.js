@@ -26,19 +26,6 @@ $(document).ready(function() {
 	    context.beginPath();
 	}
 	
-	// Resize canvas to full screen
-	function resizeCanvas() {
-	   /*
- canvas.attr('width', $(window).get(0).innerWidth);
-	    canvas.attr('height', $(window).get(0).innerHeight);
-	    canvasWidth = canvas.width();
-	    canvasHeight = canvas.height();
-*/
-	}
-	resizeCanvas();
-	$(window).resize(resizeCanvas);
-	
-	
 	// Draw Grid
 	function drawGrid(canvas, scale) {
         context.fillStyle = "#000";
@@ -163,6 +150,8 @@ $(document).ready(function() {
 	    // Scale coordinates for rendering
 	    var x = data.x * scale;
 	    var y = data.y * scale;
+	    
+	    // Station colors
 	    var foregroundColor = '#000000';
 	    var backgroundColor = '#FFFFFF';
 	
@@ -243,7 +232,6 @@ $(document).ready(function() {
 	    	var ul = $(this);
 	    	var color = $(ul).attr('data-color');
 	    	var lineLabel = $(ul).attr('data-label');
-	    	//console.log('Line Label: ' + lineLabel + ' Color: ' + color);
 	    	$('#legend').append('<div class="legend-label"><span class="legend-line" style="height:' + lineWidth + 'px; background-color:' + color + '"></span>' + lineLabel + '</div>');
 	    	var shiftX = 0.00;
 	        var shiftY = 0.00;
@@ -283,7 +271,6 @@ $(document).ready(function() {
 					x = Number(coords.split(',')[0]) + (marker.indexOf('interchange') > -1 ? 0 : shiftX);
 					y = Number(coords.split(',')[1]) + (marker.indexOf('interchange') > -1 ? 0 : shiftY);
 				}
-				//console.log('coords: ' + coords + ' labelPos: ' + labelPos + ' marker: ' + marker + ' markerInfo: ' + markerInfo);
 				nodes[nodes.length] = { x: x, y:y, direction: dir, marker: marker, markerInfo: markerInfo, link: link, title: title, label: label, labelPos: labelPos};
 			});
 			if (nodes.length > 0) {
@@ -293,132 +280,6 @@ $(document).ready(function() {
 		});
 	}
 	drawPoints();
-	
-	
-	/*
-// Redraw Canvas Context
-	function redraw(){
-		// Clear the entire canvas
-		//var p1 = context.transformedPoint(0,0);
-		//var p2 = context.transformedPoint(canvas.width,canvas.height);
-		//context.clearRect(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
-		clearCanvas();
-		// Alternatively:
-		context.save();
-		context.setTransform(1,0,0,1,0,0);
-		context.clearRect(0,0,canvas.width,canvas.height);
-		context.restore();
-	}
-	
-	// Track Transformations
-	// Adds context.getTransform() - returns an SVGMatrix
-	// Adds context.transformedPoint(x,y) - returns an SVGPoint
-	function trackTransforms(context){
-		var svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
-		var xform = svg.createSVGMatrix();
-		context.getTransform = function(){ return xform; };
-		
-		var savedTransforms = [];
-		var save = context.save;
-		context.save = function() {
-			savedTransforms.push(xform.translate(0,0));
-			return save.call(context);
-		};
-		var restore = context.restore;
-		context.restore = function() {
-			xform = savedTransforms.pop();
-			return restore.call(context);
-		};
-	
-		var scale = context.scale;
-		context.scale = function(sx,sy) {
-			xform = xform.scaleNonUniform(sx,sy);
-			return scale.call(context,sx,sy);
-		};
-		var rotate = context.rotate;
-		context.rotate = function(radians) {
-			xform = xform.rotate(radians*180/Math.PI);
-			return rotate.call(context,radians);
-		};
-		var translate = context.translate;
-		context.translate = function(dx,dy) {
-			xform = xform.translate(dx,dy);
-			return translate.call(context,dx,dy);
-		};
-		var transform = context.transform;
-		context.transform = function(a,b,c,d,e,f) {
-			var m2 = svg.createSVGMatrix();
-			m2.a=a; m2.b=b; m2.c=c; m2.d=d; m2.e=e; m2.f=f;
-			xform = xform.multiply(m2);
-			return transform.call(context,a,b,c,d,e,f);
-		};
-		var setTransform = context.setTransform;
-		context.setTransform = function(a,b,c,d,e,f) {
-			xform.a = a;
-			xform.b = b;
-			xform.c = c;
-			xform.d = d;
-			xform.e = e;
-			xform.f = f;
-			return setTransform.call(context,a,b,c,d,e,f);
-		};
-		var pt  = svg.createSVGPoint();
-		context.transformedPoint = function(x,y) {
-			pt.x=x; pt.y=y;
-			return pt.matrixTransform(xform.inverse());
-		}
-	}
-	trackTransforms(context);
-	
-	// Mouse Drag Pan Event
-	var dragStart,dragged;
-	canvas.get(0).addEventListener('mousedown',function(evt){
-		document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'none';
-		lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
-		lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
-		dragStart = context.transformedPoint(lastX,lastY);
-		dragged = false;
-	},false);
-	canvas.get(0).addEventListener('mousemove',function(evt){
-		lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
-		lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
-		dragged = true;
-		if (dragStart){
-			var pt = context.transformedPoint(lastX,lastY);
-			context.translate(pt.x-dragStart.x,pt.y-dragStart.y);
-			redraw();
-		}
-	},false);
-	canvas.get(0).addEventListener('mouseup',function(evt){
-		dragStart = null;
-		if (!dragged) zoom(evt.shiftKey ? -1 : 1 );
-	},false);
-	
-
-	// Zoom Event
-	var scaleFactor = 1.1;
-	var zoom = function(clicks) {
-		var pt = context.transformedPoint(lastX,lastY);
-		context.translate(pt.x,pt.y);
-		var factor = Math.pow(scaleFactor,clicks);
-		context.scale(factor,factor);
-		context.translate(-pt.x,-pt.y);
-		//console.log(context);
-		redraw();
-	}
-	
-	// Scroll Zoom Event
-	var handleScroll = function(evt){
-		var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
-		if (delta){ 
-			zoom(delta);
-		}
-		return evt.preventDefault() && false;
-	};
-	canvas.get(0).addEventListener('DOMMouseScroll', handleScroll, false);
-	canvas.get(0).addEventListener('mousewheel', handleScroll, false);
-*/
-	
 });
 
 
