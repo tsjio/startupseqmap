@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('[rel="tooltip"]').hover(function() {
+	$('.text').hover(function() {
 		// Hover over
 		var title = $(this).attr('title');
 		$(this).data('tipText', title).removeAttr('title');

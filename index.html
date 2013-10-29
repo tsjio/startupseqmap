@@ -1,81 +1,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Startup Map</title>
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+  <link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <a href="https://github.com/tsjio/startupseqmap"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
-	<canvas id="canvas" class="loading" width="2000px" height="2000px" data-columns="50" data-rows="50" data-scale="50" data-line-width="10"></canvas>
+  <!-- <canvas id="canvas" class="loading" width="2000px" height="2000px" data-columns="50" data-rows="50" data-scale="50" data-line-width="10"></canvas> -->
+  <div class="subway-map" data-columns="40" data-rows="40" data-cellSize="50" data-legendId="legend" data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="16">
     <!-- River City Labs Startups -->
     <ul data-color="#967ADC" data-label="River City Labs Startups">
-      <li data-coords="14,5" data-direction="E"></li>  
-      <li data-coords="12,5" data-label-position="N"><a href="#">Ollo Mobile</a></li>
-      <li data-coords="10,5" data-label-position="N"><a href="#">SwipeAds</a></li>
-      <li data-coords="8,6" data-label-position="W"><a href="#">HungryHero</a></li>
-      <li data-coords="6,7" data-label-position="W"><a href="#">Cohort Pay</a></li>
-      <li data-coords="4,8" data-label-position="W"><a href="#">Cookoo</a></li>
-      <li data-coords="3,10" data-label-position="W"><a href="#">Slyncy</a></li>
-      <li data-coords="2,12" data-label-position="W"><a href="#">CloudSafe365</a></li>
-      <li data-coords="2,14" data-label-position="W"><a href="#">Ezy Client</a></li>
-    <li data-coords="2,16" data-label-position="W"><a href="#">Ghostbox</a></li>
-    <li data-coords="2,18" data-label-position="W"><a href="#">HookedUp</a></li>
-    <li data-coords="2,20" data-label-position="W"><a href="#">Keyless.io</a></li>
-    <li data-coords="2,22" data-label-position="W"><a href="#">Sign-up.to</a></li>
-    <li data-coords="2,24" data-label-position="W"><a href="#">Social.IQ</a></li>
-    <li data-coords="2,26" data-label-position="W"><a href="#">Tap-to</a></li>
+      <li data-coords="14,5" data-dir="E"></li>  
+      <li data-coords="12,5" data-labelPos="N"><a href="#">Ollo Mobile</a></li>
+      <li data-coords="10,5" data-labelPos="N"><a href="#">SwipeAds</a></li>
+      <li data-coords="8,5" data-labelPos="N"><a href="#">HungryHero</a></li>
+      <li data-coords="6,5" data-labelPos="N"><a href="#">Cohort Pay</a></li>
+      <li data-coords="4,5" data-labelPos="N"><a href="#">Cookoo</a></li>
+      <li data-coords="3,6" data-dir="W"></li>
+      <li data-coords="3,7" data-labelPos="W"><a href="#">Slyncy</a></li>
+      <li data-coords="3,9" data-labelPos="W"><a href="#">CloudSafe365</a></li>
+      <li data-coords="3,11" data-labelPos="W"><a href="#">Ezy Client</a></li>
+      <li data-coords="3,13" data-labelPos="W"><a href="#">Ghostbox</a></li>
+      <li data-coords="3,15" data-labelPos="W"><a href="#">HookedUp</a></li>
+      <li data-coords="3,17" data-labelPos="W"><a href="#">Keyless.io</a></li>
+      <li data-coords="3,19" data-labelPos="W"><a href="#">Sign-up.to</a></li>
+      <li data-coords="3,21" data-labelPos="W"><a href="#">Social.IQ</a></li>
+      <li data-coords="3,23" data-labelPos="W"><a href="#">Tap-to</a></li>
     </ul>
     <!-- ilab Startups -->
     <ul data-color="#000" data-label="ilab Startups">
-      <li data-coords="14,8" data-direction="E"></li>
-      <li data-coords="11,8" data-label-position="N"><a href="#">Veilability</a></li>
-      <li data-coords="9,8" data-label-position="N"><a href="#">Dugong Software</a></li>
-      <li data-coords="7,8" data-label-position="N"><a href="#">Ample Entertainment</a></li>
-      <li data-coords="6,9" data-direction="W"></li>
-      <li data-coords="6,10" data-label-position="W"><a href="#">Tiger Temple</a></li>
-      <li data-coords="6,11" data-direction="W"></li>
-      <li data-coords="6,13" data-label-position="W"><a href="#">Fizziofit</a></li>
-      <li data-coords="6,14" data-label-position="W"><a href="#">The Third Row</a></li>
-      <li data-coords="6,15" data-label-position="W"><a href="#">HSK Instruments</a></li>
-      <li data-coords="6,16" data-label-position="W"><a href="#">Cartesian Co</a></li>
-      <li data-coords="6,17" data-label-position="W"><a href="#">Language &amp; Learning Steps</a></li>
-      <li data-coords="6,18" data-label-position="W"><a href="#">ParkMeApp</a></li>
-      <li data-coords="6,19" data-label-position="W"><a href="#">Peep Digital</a></li>
-      <li data-coords="6,20" data-label-position="W"><a href="#">Smooth Operator</a></li>
-      <li data-coords="6,21" data-label-position="W"><a href="#">Spacetime Data</a></li>
-      <li data-coords="6,22" data-label-position="W"><a href="#">EFL Tech</a></li>
-      <li data-coords="6,23" data-label-position="W"><a href="#">MyImportLabel</a></li>
-      <li data-coords="6,24" data-label-position="W"><a href="#">CrowdSites</a></li>
-      <li data-coords="6,25" data-label-position="W"><a href="#">Shopiper</a></li>
-      <li data-coords="6,26" data-label-position="W"><a href="#">Qheart</a></li>
-      <li data-coords="6,27" data-label-position="W"><a href="#">Participaid</a></li>
-      <li data-coords="6,28" data-label-position="W"><a href="#">Hypermancer</a></li>
-      <li data-coords="6,29" data-label-position="W"><a href="#">Broken Specs</a></li>
-      <li data-coords="6,30" data-label-position="W"><a href="#">Bliip</a></li>
-      <li data-coords="6,31" data-label-position="W"><a href="#">Enthuse</a></li>
-      <li data-coords="6,32" data-label-position="W"><a href="#">Enterprise DT</a></li>
-      <li data-coords="6,33" data-label-position="W"><a href="#">Perch</a></li>
+      <li data-coords="14,8" data-dir="E"></li>
+      <li data-coords="11,8" data-labelPos="N"><a href="#">Veilability</a></li>
+      <li data-coords="9,8" data-labelPos="N"><a href="#">Dugong Software</a></li>
+      <li data-coords="7,8" data-labelPos="N"><a href="#">Ample Entertainment</a></li>
+      <li data-coords="6,9" data-dir="W"></li>
+      <li data-coords="6,10" data-labelPos="W"><a href="#">Tiger Temple</a></li>
+      <li data-coords="6,11" data-labelPos="W"><a href="#">Fizziofit</a></li>
+      <li data-coords="6,12" data-labelPos="W"><a href="#">The Third Row</a></li>
+      <li data-coords="6,13" data-labelPos="W"><a href="#">HSK Instruments</a></li>
+      <li data-coords="6,14" data-labelPos="W"><a href="#">Cartesian Co</a></li>
+      <li data-coords="6,15" data-labelPos="W"><a href="#">Language &amp; Learning Steps</a></li>
+      <li data-coords="6,16" data-labelPos="W"><a href="#">ParkMeApp</a></li>
+      <li data-coords="6,17" data-labelPos="W"><a href="#">Peep Digital</a></li>
+      <li data-coords="6,18" data-labelPos="W"><a href="#">Smooth Operator</a></li>
+      <li data-coords="6,19" data-labelPos="W"><a href="#">Spacetime Data</a></li>
+      <li data-coords="6,20" data-labelPos="W"><a href="#">EFL Tech</a></li>
+      <li data-coords="6,21" data-labelPos="W"><a href="#">MyImportLabel</a></li>
+      <li data-coords="6,22" data-labelPos="W"><a href="#">CrowdSites</a></li>
+      <li data-coords="6,23" data-labelPos="W"><a href="#">Shopiper</a></li>
+      <li data-coords="6,24" data-labelPos="W"><a href="#">Qheart</a></li>
+      <li data-coords="6,25" data-labelPos="W"><a href="#">Participaid</a></li>
+      <li data-coords="6,26" data-labelPos="W"><a href="#">Hypermancer</a></li>
+      <li data-coords="6,27" data-labelPos="W"><a href="#">Broken Specs</a></li>
+      <li data-coords="6,28" data-labelPos="W"><a href="#">Bliip</a></li>
+      <li data-coords="6,29" data-labelPos="W"><a href="#">Enthuse</a></li>
+      <li data-coords="6,30" data-labelPos="W"><a href="#">Enterprise DT</a></li>
+      <li data-coords="6,31" data-labelPos="W"><a href="#">Perch</a></li>
     </ul>
     <!-- Silicon Lakes Startups -->
     <ul data-color="#0000FF" data-label="Silicon Lakes Startups">
       <li data-coords="15,21"></li>
-      <li data-coords="17,21" data-label-position="N"><a href="#">GoStandby</a></li>
-      <li data-coords="19,21" data-label-position="N"><a href="#">Preveu</a></li>
+      <li data-coords="17,21" data-labelPos="N"><a href="#">GoStandby</a></li>
+      <li data-coords="19,21" data-labelPos="N"><a href="#">Preveu</a></li>
     </ul>
     <!-- Startups -->
     <ul data-color="#95C5DB" data-label="&quot;Independent&quot; Startups">
-      <li data-coords="23,5" data-direction="N"></li>  
-      <li data-coords="24,7" data-label-position="E"><a href="#">PayAus</a></li>
-      <li data-coords="25,9" data-label-position="E"><a href="#">Tappr</a></li>
-      <li data-coords="26,11" data-label-position="E"><a href="#">Locatrix</a></li>
-      <li data-coords="27,13" data-label-position="E"><a href="#">Enthuse</a></li>
-      <li data-coords="28,15" data-label-position="E"><a href="#">Liquid State</a></li>
-      <li data-coords="29,17" data-label-position="E"><a href="#">KickSpy</a></li>
-      <li data-coords="30,19" data-label-position="E"><a href="#">HalfBrick</a></li>
-      <li data-coords="31,21" data-label-position="E"><a href="#">Imagineer Mobile</a></li>
-      <li data-coords="32,23" data-label-position="E"><a href="#">Bizeo</a></li>
-      <li data-coords="33,25" data-label-position="E"><a href="#">RefinedRough</a></li>
-      <li data-coords="34,27" data-label-position="E"><a href="#">Sport Performance Accelerator</a></li>
-      <li data-coords="35,29" data-label-position="E"><a href="#">See-Out</a></li>
+      <li data-coords="23,5" data-dir="N"></li>  
+      <li data-coords="24,7" data-labelPos="E"><a href="#">PayAus</a></li>
+      <li data-coords="25,9" data-labelPos="E"><a href="#">Tappr</a></li>
+      <li data-coords="26,11" data-labelPos="E"><a href="#">Locatrix</a></li>
+      <li data-coords="27,13" data-labelPos="E"><a href="#">Enthuse</a></li>
+      <li data-coords="28,15" data-labelPos="E"><a href="#">Liquid State</a></li>
+      <li data-coords="29,17" data-labelPos="E"><a href="#">KickSpy</a></li>
+      <li data-coords="30,19" data-labelPos="E"><a href="#">HalfBrick</a></li>
+      <li data-coords="31,21" data-labelPos="E"><a href="#">Imagineer Mobile</a></li>
+      <li data-coords="32,23" data-labelPos="E"><a href="#">Bizeo</a></li>
+      <li data-coords="33,25" data-labelPos="E"><a href="#">RefinedRough</a></li>
+      <li data-coords="34,27" data-labelPos="E"><a href="#">Sport Performance Accelerator</a></li>
+      <li data-coords="35,29" data-labelPos="E"><a href="#">See-Out</a></li>
       <li data-coords="36,31"></li>
     </ul>
     
@@ -93,95 +93,109 @@
     <li data-coords="17,11" data-dir="E"></li>
     <li data-coords="15,11" data-dir="E"></li>
     <li data-coords="15,14"></li>
-    <li data-coords="15,21" data-marker="interchange" data-label-position="W"><a href="#">Silicon Lakes</a></li>
-    <li data-coords="15,22" data-label-position="E"><a href="#">Salt House</a></li>
-    <li data-coords="15,23" data-label-position="E"><a href="#">Lighthouse</a></li>
-    <li data-coords="15,24" data-label-position="E"><a href="#">Thoughtfort</a></li>
-    <li data-coords="15,25" data-label-position="E"><a href="#">Ideation Cafe</a></li>
-    <li data-coords="15,26" data-label-position="E"><a href="#">Water Street Studio</a></li>
-    <li data-coords="17,27" data-direction="S" data-label-position="S"><a href="#">Microsoft Innovation Centre</a></li>
-    <li data-coords="19,27" data-label-position="S"><a href="#">rabbit+cocoon</a></li>
-    <li data-coords="21,27" data-label-position="S"><a href="#">The Rabbit Hole</a></li>
-    <li data-coords="23,27" data-label-position="S"><a href="#">Sunshine Coast Innovation Centre</a></li>
-    <li data-coords="25,27" data-label-position="S"><a href="#">The Red Place</a></li>
-    <li data-coords="27,27" data-label-position="S"><a href="#">Kowork</a></li>
+    <li data-coords="15,21" data-marker="interchange" data-labelPos="NW"><a href="#">Silicon Lakes</a></li>
+    <li data-coords="15,22" data-labelPos="E"><a href="#">Salt House</a></li>
+    <li data-coords="15,23" data-labelPos="E"><a href="#">Lighthouse</a></li>
+    <li data-coords="15,24" data-labelPos="E"><a href="#">Thoughtfort</a></li>
+    <li data-coords="15,25" data-labelPos="E"><a href="#">Ideation Cafe</a></li>
+    <li data-coords="15,26" data-labelPos="E"><a href="#">Water Street Studio</a></li>
+    <li data-coords="16,27" data-dir="S" data-labelPos="S"><a href="#">Microsoft Innovation Centre</a></li>
+    <li data-coords="19,27" data-labelPos="S"><a href="#">rabbit+cocoon</a></li>
+    <li data-coords="21,27" data-labelPos="S"><a href="#">The Rabbit Hole</a></li>
+    <li data-coords="23,27" data-labelPos="S"><a href="#">Sunshine Coast Innovation Centre</a></li>
+    <li data-coords="25,27" data-labelPos="S"><a href="#">The Red Place</a></li>
+    <li data-coords="27,27" data-labelPos="S"><a href="#">Kowork</a></li>
   </ul>
   <!-- Meetups -->
     <ul data-color="#FFCE54" data-label="Meetups">
       <li data-coords="14.5,5"></li>
       <li data-coords="14.5,15"></li>
-      <li data-coords="11,17" data-label-position="E"><a href="#">Ruby &amp; Rails Meetup</a></li>
-    <li data-coords="11,19" data-label-position="E"><a href="#">Python Meetup</a></li>
-    <li data-coords="11,21" data-label-position="E"><a href="#">Cocoaheads</a></li>
-    <li data-coords="11,23" data-label-position="E"><a href="#">MoMo Brisbane</a></li>
-    <li data-coords="11,25" data-label-position="E"><a href="#">BrisJelly</a></li>
-    <li data-coords="11,27" data-label-position="E"><a href="#">Silicon Beach</a></li>
-    <li data-coords="11,29" data-label-position="E"><a href="#">Networx</a></li>
-    <li data-coords="11,31" data-label-position="E"><a href="#">Brisbane Interactive Beers</a></li>
+      <li data-coords="13.5,16" data-dir="S"></li>
+      <li data-coords="12,16" ></li>
+      <li data-coords="11,17" data-dir="W" data-labelPos="E"><a href="#">Ruby &amp; Rails Meetup</a></li>
+    <li data-coords="11,19" data-labelPos="E"><a href="#">Python Meetup</a></li>
+    <li data-coords="11,21" data-labelPos="E"><a href="#">Cocoaheads</a></li>
+    <li data-coords="11,23" data-labelPos="E"><a href="#">MoMo Brisbane</a></li>
+    <li data-coords="11,25" data-labelPos="E"><a href="#">BrisJelly</a></li>
+    <li data-coords="11,27" data-labelPos="E"><a href="#">Silicon Beach</a></li>
+    <li data-coords="11,29" data-labelPos="E"><a href="#">Networx</a></li>
+    <li data-coords="11,31" data-labelPos="E"><a href="#">Brisbane Interactive Beers</a></li>
     </ul>
     <!-- Events -->
     <ul data-color="#D770AD" data-label="Events">
-      <li data-coords="14,5" data-label-position="N" data-dir="E" data-marker="interchange" data-marker-info="h5"><a href="#">River City Labs</a></li>  
+      <li data-coords="14,5" data-labelPos="N" data-dir="E" data-marker="interchange" data-markerInfo="h3"><a href="#">River City Labs</a></li>  
         <li data-coords="14,6"></li>
         <li data-coords="14,5"></li>
-    <li data-coords="14,8" data-label-position="W" data-direction="E" data-marker="interchange" data-marker-info="h5"><a href="#">ilab</a></li>  
+    <li data-coords="14,8" data-labelPos="NW" data-dir="E" data-marker="interchange" data-markerInfo="h3"><a href="#">ilab</a></li>  
         <li data-coords="14,9"></li>
         <li data-coords="14,8"></li>
-        <li data-coords="14,11" data-label-position="W" data-direction="E" data-marker="interchange" data-marker-info="h5"><a href="#">CEA Workspaces</a></li>  
+        <li data-coords="14,11" data-labelPos="W" data-dir="E" data-marker="interchange" data-markerInfo="h3"><a href="#">CEA Workspaces</a></li>  
         <li data-coords="14,12"></li>
         <li data-coords="14,11"></li>
-        <li data-coords="14,14" data-label-position="W" data-direction="E" data-marker="interchange" data-marker-info="h5"><a href="#">The Edge</a></li>  
-
-    <li data-coords="9,17" data-label-position="W"><a href="#">Startup Weekend</a></li>
-    <li data-coords="9,20.5" data-label-position="W"><a href="#">YOW!</a></li>
-    <li data-coords="9,24" data-label-position="W"><a href="#">River Pitch</a></li>
-    <li data-coords="9,27.5" data-label-position="W"><a href="#">Creative3</a></li>
-    <li data-coords="9,31" data-label-position="W"><a href="#">Interactive Minds</a></li>
+        <li data-coords="14,14" data-labelPos="W" data-dir="E" data-marker="interchange" data-markerInfo="h3"><a href="#">The Edge</a></li>
+        <li data-coords="13,15" data-dir="S"></li>
+        <li data-coords="10,15"></li>
+        <li data-coords="9,16" data-dir="W"></li>
+    <li data-coords="9,17" data-labelPos="W"><a href="#">Startup Weekend</a></li>
+    <li data-coords="9,20.5" data-labelPos="W"><a href="#">YOW!</a></li>
+    <li data-coords="9,24" data-labelPos="W"><a href="#">River Pitch</a></li>
+    <li data-coords="9,27.5" data-labelPos="W"><a href="#">Creative3</a></li>
+    <li data-coords="9,31" data-labelPos="W"><a href="#">Interactive Minds</a></li>
     </ul>
     <!-- Growth Stage Funding -->
     <ul data-color="#48CFAD" data-label="Growth Stage Funding">
       <li data-coords="23,5" data-dir="N"></li>
-      <li data-coords="25,4" data-label-position="N"><a href="#">Blue Sky Venture Fund</a></li>
-    <li data-coords="27,3" data-label-position="N"><a href="#">One Ventures</a></li>
-    <li data-coords="29,2" data-label-position="N"><a href="#">Southern Cross</a></li>
-    <li data-coords="31,1" data-label-position="N"><a href="#">Arowana</a></li>
+      <li data-coords="25,4" data-labelPos="SE"><a href="#">Blue Sky Venture Fund</a></li>
+    <li data-coords="27,3" data-labelPos="SE"><a href="#">One Ventures</a></li>
+    <li data-coords="29,2" data-labelPos="SE"><a href="#">Southern Cross</a></li>
+    <li data-coords="31,1" data-labelPos="SE"><a href="#">Arowana</a></li>
     </ul>
     <!-- Seed & Early Stage Funding -->
     <ul data-color="#4A89DC" data-label="Seed &amp; Early Stage Funding">
-    <li data-coords="17,11" data-marker="interchange" data-label-position="S"><a href="#">CEA Seed &amp; Early Stage Fund</a></li>
-    <li data-coords="17,8" data-marker="interchange" data-label-position="E"><a href="#">ilab Germinate/Accelerate</a></li>
-    <li data-coords="17,5" data-marker="interchange" data-label-position="N"><a href="#">Transition Level Investments</a></li>
-    <li data-coords="19,5" data-label-position="N"><a href="#">Right Pedal Studios</a></li>
-    <li data-coords="21,5" data-label-position="N"><a href="#">Gold Coast Angels</a></li>
-    <li data-coords="23,5" data-marker="interchange" data-label-position="N"><a href="#">Brisbane Angels</a></li>
+    <li data-coords="17,11" data-marker="interchange" data-labelPos="S"><a href="#">CEA Seed &amp; Early Stage Fund</a></li>
+    <li data-coords="17,8" data-marker="interchange" data-labelPos="E"><a href="#">ilab Germinate/Accelerate</a></li>
+    <li data-coords="17,5" data-marker="interchange" data-labelPos="N"><a href="#">Transition Level Investments</a></li>
+    <li data-coords="19,5" data-labelPos="N"><a href="#">Right Pedal Studios</a></li>
+    <li data-coords="21,5" data-labelPos="N"><a href="#">Gold Coast Angels</a></li>
+    <li data-coords="23,5" data-marker="interchange" data-labelPos="N"><a href="#">Brisbane Angels</a></li>
     </ul>
     <!-- News/Documentarians -->
     <ul data-color="#A0D468" data-label="News/Documentarians">
-      <li data-coords="36,31" data-direction="E"></li> 
-      <li data-coords="33,31" data-label-position="N"><a href="#">TSJ</a></li>
-      <li data-coords="31,31" data-label-position="N"><a href="#">Tech Tidal</a></li>
-      <li data-coords="29,31" data-label-position="N"><a href="#">Startup Brisbane</a></li>
-      <li data-coords="27,31" data-label-position="N"><a href="#">The Fetch Brisbane</a></li>
-      <li data-coords="25,31" data-label-position="N"><a href="#">Hack &amp; Heckle</a></li>
+      <li data-coords="36,31" data-dir="E"></li> 
+      <li data-coords="33,31" data-labelPos="N"><a href="#">TSJ</a></li>
+      <li data-coords="31,31" data-labelPos="N"><a href="#">Tech Tidal</a></li>
+      <li data-coords="29,31" data-labelPos="N"><a href="#">Startup Brisbane</a></li>
+      <li data-coords="27,31" data-labelPos="N"><a href="#">The Fetch Brisbane</a></li>
+      <li data-coords="25,31" data-labelPos="N"><a href="#">Hack &amp; Heckle</a></li>
     </ul>
     <!-- Universities -->
     <ul data-color="#E9573F" data-label="Universities/R&amp;D">
-      <li data-coords="36,31" data-marker="interchange" data-label-position="E"><a href="#">NICTA</a></li>
-      <li data-coords="38,32" data-label-position="N"><a href="#">QUT</a></li>
-      <li data-coords="38,34" data-label-position="E"><a href="#">Griffith</a></li>
-      <li data-coords="36,35" data-label-position="S"><a href="#">Southbank Institute of TAFE</a></li>
-      <li data-coords="34,34" data-label-position="S"><a href="#">Qantm</a></li>
-      <li data-coords="34,32" data-label-position="W"><a href="#">UQ</a></li>
+      <li data-coords="36,31" data-marker="interchange" data-labelPos="NE"><a href="#">NICTA</a></li>
+      <li data-coords="37,31"></li>
+      <li data-coords="38,32" data-dir="E" data-labelPos="E"><a href="#">QUT</a></li>
+      <li data-coords="38,34" data-labelPos="E"><a href="#">Griffith</a></li>
+      <li data-coords="37,35" data-dir="S"></li>
+      <li data-coords="36,35" data-labelPos="S"><a href="#">Southbank Institute of TAFE</a></li>
+      <li data-coords="35,35"></li>
+      <li data-coords="34,34" data-dir="W" data-labelPos="W"><a href="#">Qantm</a></li>
+      <li data-coords="34,32" data-labelPos="W"><a href="#">UQ</a></li>
+      <li data-coords="35,31" data-dir="N"></li>
       <li data-coords="36,31"></li>
     </ul>
+  </div>
 	<div id="legend"></div>
+  <a href="https://github.com/tsjio/startupseqmap"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
 	<footer>
 		<p class="pull-left">&copy; 2013 <a href="http://tsj.io/"><img id="logo" src="images/logo.png" alt="The Tech Street Journal" title="The Tech Street Journal" /></a>. Website Created by <a href="http://scottdejonge.com">Scott de Jonge</a></p>
 		<p class="pull-right">&#9776; <span id="legend-toggle">Hide Legend</span></p>
 	</footer>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/transitmap.js"></script>
+    <script type="text/javascript" src="js/jquery.subwayMap-0.5.0.js"></script>
+    <!-- <script type="text/javascript" src="js/transitmap.js"></script> -->
     <script type="text/javascript" src="js/tooltip.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      $(".subway-map").subwayMap({ debug: true });
+    </script>
 </body>
 </html>
