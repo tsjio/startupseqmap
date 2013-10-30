@@ -130,7 +130,7 @@ a.text:hover {
 /* Footer */
 	
 footer {
-	z-index: 999;
+	z-index: 9999;
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -138,7 +138,7 @@ footer {
 	height: 20px;
 	padding: 20px;
 	color: #7d8692;
-	background: #FFFFFF;
+	background: #EEEEEE;
 }
 
 #logo {
