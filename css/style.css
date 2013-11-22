@@ -59,14 +59,14 @@ a:hover {
 	z-index: 9999;
 	display: none;
 	position: absolute;
-	padding: 10px;
+/*  padding: 10px;*/
 	color: #FFFFFF;
 	text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 	background: #434A54;
 	background: rgba(67,74,84,0.8);
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 	-webkit-box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
@@ -101,6 +101,15 @@ a.text {
 
 a.text:hover {
 	color: #999;
+}
+
+img.node-icon {
+  width: 100px;
+  height: 100px;
+  border: none;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }
 
 /* Legend */
