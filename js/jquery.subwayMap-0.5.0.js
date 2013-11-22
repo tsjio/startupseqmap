@@ -175,11 +175,15 @@ THE SOFTWARE.
 
                     var link = "";
                     var title = "";
+                    var linkData = {};
                     if (anchor != undefined) {
                         link = $(anchor).attr("href");
                         if (link === undefined) link = "";
                         title = $(anchor).attr("title");
                         if (title === undefined) title = "";
+                        linkData = $(anchor).data();
+                        if (linkData === undefined) linkData = {};
+                        console.log(linkData);
                     }
 
                     self._debug("Coords=" + coords + "; Dir=" + dir + "; Link=" + link + "; Label=" + label + "; labelPos=" + labelPos + "; Marker=" + marker);
@@ -190,7 +194,8 @@ THE SOFTWARE.
                         x = Number(coords.split(",")[0]) + (marker.indexOf("interchange") > -1 ? 0 : shiftX);
                         y = Number(coords.split(",")[1]) + (marker.indexOf("interchange") > -1 ? 0 : shiftY);
                     }
-                    nodes[nodes.length] = { x: x, y:y, direction: dir, marker: marker, markerInfo: markerInfo, link: link, title: title, label: label, labelPos: labelPos};
+                    var n = { x: x, y:y, direction: dir, marker: marker, markerInfo: markerInfo, link: link, title: title, label: label, labelPos: labelPos, linkData: linkData};
+                    nodes[nodes.length] = n;
                 });
                 if (nodes.length > 0)
                     self._drawLine(el, scale, rows, columns, color, (lineTextClass != "" ? lineTextClass : textClass), lineWidth, nodes, reverseMarkers);
@@ -409,7 +414,13 @@ THE SOFTWARE.
             var title = data.title.replace(/\\n/g,"<br />");
             var label = data.label.replace(/\\n/g,"<br />");
             title = (title == "" ? label : title);
-            $("<a " + style + " title='" + title + "' href='" + data.link + "' target='_new'>" + label + "</span>").appendTo(el);
+            var theLink = $("<a " + style + "></a>");
+            theLink.attr("title", title);
+            theLink.attr("href", data.link);
+            theLink.attr("target", "_new");
+            theLink.html(label);
+            theLink.data(data.linkData);
+            theLink.appendTo(el);
         }
         else
         {
